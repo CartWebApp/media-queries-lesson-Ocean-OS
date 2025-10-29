@@ -135,6 +135,9 @@
         width: 98%;
         height: 20vh;
         margin-top: 0.6rem;
+        &:last-child {
+            margin-bottom: 0.6rem;
+        }
     }
     .quarter {
         &[class^='box6'] {
