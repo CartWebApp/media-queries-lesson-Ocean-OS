@@ -1,75 +1,149 @@
 /* Box-sizing border-box */
-* { box-sizing: border-box; }
-
+* {
+    box-sizing: border-box;
+}
 
 /* Some default styles to make each box visible. This targets all items with a class that starts with "box" */
-[class^="box"] {
-  color:white;
-  font-size: 100px;
-  text-align: center;
-  text-shadow:4px 4px 0 rgba(0,0,0,0.1);
-  padding:10px;
+[class^='box'] {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
 
 /* Colors for each box */
-.box1 { background:#1abc9c;}
-.box2 { background:#3498db;}
-.box3 { background:#9b59b6;}
-.box4 { background:#34495e;}
-.box5 { background:#f1c40f;}
-.box6 { background:#e67e22;}
-.box7 { background:#e74c3c;}
-.box8 { background:#bdc3c7;}
-.box9 { background:#2ecc71;}
-.box10 { background:#16a085;}
-
+.box1 {
+    background: #1abc9c;
+}
+.box2 {
+    background: #3498db;
+}
+.box3 {
+    background: #9b59b6;
+}
+.box4 {
+    background: #34495e;
+}
+.box5 {
+    background: #f1c40f;
+}
+.box6 {
+    background: #e67e22;
+}
+.box7 {
+    background: #e74c3c;
+}
+.box8 {
+    background: #bdc3c7;
+}
+.box9 {
+    background: #2ecc71;
+}
+.box10 {
+    background: #16a085;
+}
 
 /* We start writing our flexbox here. The above is just page setup */
 .flex-container {
-  border:10px solid goldenrod;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-content: space-evenly;
-  height: 100vh;
-  max-width: 1280px;
-  margin: 0 auto;
+    border: 10px solid goldenrod;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-[class^="box"] {
+[class^='box'] {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .full {
-  width: 98%;
-  height: 29vh;
+    width: 98%;
+    height: 29vh;
 }
 
 .half {
-  width: calc(97% / 2);
-  height: 29vh;
+    width: calc(97% / 2);
+    height: 29vh;
 }
 
 .third {
-  width: 32%;
-  height: 18vh;
+    width: 32%;
+    height: 18vh;
 }
 
 .quarter {
-  width: 24%;
-  height: 18vh;
+    width: 24%;
+    height: 18vh;
 }
 
 /* Tablet Styles*/
-
-
-
+@media screen and (max-width: 1024px) and (min-width: 681px) {
+    body {
+        background: radial-gradient(
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            purple
+        );
+    }
+    .flex-container {
+        height: auto;
+    }
+    [class^='box'] {
+        margin-bottom: 0.6rem;
+    }
+    .full {
+        margin-top: 0.6rem;
+    }
+    .quarter {
+        width: 48.5%;
+        &[class^='box7'] {
+            margin-right: 49.5%;
+            margin-left: -49.5%;
+        }
+        &[class^='box6'] {
+            margin-right: -49.5%;
+            margin-left: 49.5%;
+        }
+    }
+}
 
 /* Mobile Styles*/
-
-
-
-
-
+@media screen and (max-width: 680px) {
+    body {
+        background: radial-gradient(
+            purple,
+            blue,
+            green,
+            yellow,
+            orange,
+            red
+        );
+    }
+    .flex-container {
+        height: auto;
+    }
+    [class^='box'] {
+        width: 98%;
+        height: 20vh;
+        margin-top: 0.6rem;
+    }
+    .quarter {
+        &[class^='box6'] {
+            margin-top: 22vh;
+            margin-bottom: -20vh;
+        }
+        &[class^='box7'] {
+            margin-top: -21vh;
+            margin-bottom: 21vh;
+        }
+    }
+}
